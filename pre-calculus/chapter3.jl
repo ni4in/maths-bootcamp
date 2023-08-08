@@ -7,9 +7,6 @@ using InteractiveUtils
 # ╔═╡ d1b65556-34fc-11ee-28d1-778032217ea1
 using Plots, LaTeXStrings
 
-# ╔═╡ dec9e499-d752-4ed9-b7fc-ec5cec77a696
-
-
 # ╔═╡ 5ce1b11c-240b-4def-b7bb-3c1dd1718b13
 md"""
 ## Exponential Functions, Logarithms and ``e``
@@ -17,7 +14,7 @@ md"""
 
 # ╔═╡ ccd0a41c-3985-4539-923e-e5f72f125c40
 md"""
-### Exponenetial Function
+### Exponential Function
 >```math
 >f(x) = b^{x}
 >```
@@ -29,11 +26,11 @@ begin
 	x1 = range(-5,5,50)
 	y1 = @. x1^2
 	y2 = @. 2^x1
-	plot(x1,y1, title=L"x^{2}" )	
+	plot(x1,y1, title=L"x^{2}" , label=L"x^{2}")	
 end
 
 # ╔═╡ ca655796-9dbf-4437-afe5-41264b001ce2
-plot(x1,y2, title=L"2^{x}" )	
+plot(x1,y2, title=L"2^{x}", label=L"2^{x}" )	
 
 # ╔═╡ 0558d0fd-a8cd-4006-9bb7-1f783a1d49fa
 md"""
@@ -53,7 +50,17 @@ md"""
 >f^{-1}(y) = x = log_b\;y
 >```
 >where ``y`` and ``b`` are positive numbers with ``b \neq 1``
+
+* ``D(f) = \left[0,\infty\right)``
+* ``R(f) = \left(-\infty,\infty\right)``
 """
+
+# ╔═╡ 97a7d8b1-3447-4cc7-9b22-3616992f5a34
+begin
+	x3 = range(0,10,100)
+	y3 = @.log2(x3)
+	plot(x3,y3,title=L"log_{2}\;x", label=L"log_{2}x")
+end
 
 # ╔═╡ 94996d49-153c-46a3-8cba-49bf8d6d9a72
 md"""
@@ -65,6 +72,21 @@ md"""
 >log_{b}\;b = 1
 >```
 """
+
+# ╔═╡ 01f1c231-9460-4497-b735-6a0f28dbffae
+md"""
+#### Inverse Properties of Logarithms
+>```math
+>b^{log_{b}\;y} = y \;
+>```
+>```math
+>log_{b}\;b^{x} = x 
+>```
+ ``\text{arises from} \;f \circ f^{-1}\;(y)`` `` \text{and}\; f^{-1} \circ f\;(x)``
+"""
+
+# ╔═╡ d9380dce-ee77-4627-b6fd-ed8b518c3cb7
+
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1063,14 +1085,16 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═d1b65556-34fc-11ee-28d1-778032217ea1
-# ╠═dec9e499-d752-4ed9-b7fc-ec5cec77a696
+# ╟─d1b65556-34fc-11ee-28d1-778032217ea1
 # ╟─5ce1b11c-240b-4def-b7bb-3c1dd1718b13
 # ╟─ccd0a41c-3985-4539-923e-e5f72f125c40
 # ╟─360ada35-3e7a-47b2-b8ad-062d0b45b9a8
 # ╟─ca655796-9dbf-4437-afe5-41264b001ce2
 # ╟─0558d0fd-a8cd-4006-9bb7-1f783a1d49fa
 # ╟─5bcb8183-821d-4161-8d8c-33f496b1d4d0
+# ╟─97a7d8b1-3447-4cc7-9b22-3616992f5a34
 # ╟─94996d49-153c-46a3-8cba-49bf8d6d9a72
+# ╟─01f1c231-9460-4497-b735-6a0f28dbffae
+# ╠═d9380dce-ee77-4627-b6fd-ed8b518c3cb7
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
