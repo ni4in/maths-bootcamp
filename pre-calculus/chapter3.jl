@@ -255,6 +255,11 @@ begin
 	
 end
 
+# ╔═╡ 919500ce-1b1b-4d0e-89ca-b97957e2734d
+md"""
+Suppose you deposit ```8000``` in a bank account that pays ``5\%`` annual interest. Assume the bank pays interest once per year at the end of the year, and that each year the interest is deposited in the bank account.
+"""
+
 # ╔═╡ a20f748f-1b62-4d57-88fc-c5d5c9ca655e
 @bind st Slider(1:100)
 
@@ -266,11 +271,25 @@ begin
 	t=1:5
 	p₀ = 8000
 	pₜ = @.p₀*(1+st/100)^t
-	plot(t,pₜ)
+	plot(t,pₜ,title="Compound Interest",label=L"P_{0}(1+r)^{t}")
 end
 		
 	
 	
+
+# ╔═╡ 024d0ff6-26df-45b3-8489-9e5d1207caab
+md"""
+#### Compound interest, ``n`` times per year
+>If interest is compounded ``n`` times per year at annual interest rate ``r`` , then after ``t`` years an initial amount ``P`` grows to 
+>```math
+>P\left(1+\frac{r}{n}\right)^{t}
+>```
+"""
+
+# ╔═╡ dcfac594-8b22-4cea-bc5e-4ce116447aa0
+md"""
+#### ``e`` and Natural Logarithm
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1980,8 +1999,8 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─d1b65556-34fc-11ee-28d1-778032217ea1
-# ╟─5ce1b11c-240b-4def-b7bb-3c1dd1718b13
+# ╠═d1b65556-34fc-11ee-28d1-778032217ea1
+# ╠═5ce1b11c-240b-4def-b7bb-3c1dd1718b13
 # ╟─ccd0a41c-3985-4539-923e-e5f72f125c40
 # ╟─360ada35-3e7a-47b2-b8ad-062d0b45b9a8
 # ╟─ca655796-9dbf-4437-afe5-41264b001ce2
@@ -2008,9 +2027,12 @@ version = "1.4.1+0"
 # ╟─74e23a64-53c2-4328-a552-cdd3cfe7f57a
 # ╟─40dbd158-9f84-434a-bbaf-cbcd76238fe0
 # ╟─94d9b4cb-b7b8-4372-8057-1764491b19a3
-# ╠═c4a98957-b082-49a4-9c02-5f2ce190645b
+# ╟─c4a98957-b082-49a4-9c02-5f2ce190645b
+# ╟─919500ce-1b1b-4d0e-89ca-b97957e2734d
 # ╟─a20f748f-1b62-4d57-88fc-c5d5c9ca655e
 # ╟─0a401fdb-7ba0-4ca1-a98b-c5d521aa5213
-# ╠═cd4c937b-f152-4f18-b487-968b91df147d
+# ╟─cd4c937b-f152-4f18-b487-968b91df147d
+# ╟─024d0ff6-26df-45b3-8489-9e5d1207caab
+# ╠═dcfac594-8b22-4cea-bc5e-4ce116447aa0
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
